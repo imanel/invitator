@@ -1,4 +1,4 @@
-body { background: #E9E9E9; width: 100%; margin: 0; padding: 0;}
+body { background: #E9E9E9; width: 100%; margin: 0; padding: 0; font-size: 16px;}
 
 #top { position: absolute; top:0; left: 0; width: 100%; height: 15px; background: #C9C9C9; border-bottom: 1px solid #565149;}
 nav { padding: 0 3px; text-align: center; position: absolute; top: 4px; right: 40px; background: #DDD; border: 1px solid #565149; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; behavior: url("/stylesheets/PIE.htc");}
@@ -10,3 +10,7 @@ nav ul li a.last { border-right: 0; }
 nav ul li.selected a { font-weight: bold;}
 
 #wrapper { margin: 40px auto 0; padding: 20px; width: 960px; background: white; border: 1px solid #ccc; }
+
+label { width: 80px; display: inline-block; }
+.field_with_errors { display: inline; }
+.formError { color: red; }

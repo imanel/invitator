@@ -9,7 +9,7 @@ class Menu
 
   SIGNED_IN_HIERARCHY = [
     [ "home", "Home", root_path ],
-    [ "profile", "Profile", '#' ],
+    [ "profile", "My Profile", profile_path ],
     [ "invitations", "Invitations", '#' ],
     [ "sign_out", "Sign out", destroy_user_session_path]
   ]

@@ -1,0 +1,22 @@
+%h1 My Profile
+
+%p
+  %b Full name:
+  = @profile.full_name
+%p
+  %b Address:
+  = @profile.address
+%p
+  %b City:
+  = @profile.city
+%p
+  %b Province:
+  = @profile.province
+%p
+  %b Country:
+  = @profile.country
+%p
+  %b Postal Code:
+  = @profile.postal_code
+%p
+  = link_to 'Edit', edit_profile_path

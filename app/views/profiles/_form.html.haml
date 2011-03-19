@@ -1,0 +1,27 @@
+= form_for @profile, :url => profile_path do |form|
+  %p
+    = form.label :full_name, 'Full Name:'
+    = form.text_field :full_name
+    = form.error_message_on :full_name, :html_tag => :span
+  %p
+    = form.label :address, 'Address:'
+    = form.text_field :address
+    = form.error_message_on :address, :html_tag => :span
+  %p
+    = form.label :city, 'City:'
+    = form.text_field :city
+    = form.error_message_on :city, :html_tag => :span
+  %p
+    = form.label :province, 'Province:'
+    = form.text_field :province
+    = form.error_message_on :province, :html_tag => :span
+  %p
+    = form.label :country, 'Country:'
+    = form.text_field :country
+    = form.error_message_on :country, :html_tag => :span
+  %p
+    = form.label :postal_code, 'Postal Code:'
+    = form.text_field :postal_code
+    = form.error_message_on :postal_code, :html_tag => :span
+  %p
+    = form.submit

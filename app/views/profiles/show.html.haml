@@ -1,5 +1,6 @@
 %h1 My Profile
 
+= image_tag(@profile.avatar.url(:thumb)) if @profile.avatar?
 %p
   %b Full name:
   = @profile.full_name

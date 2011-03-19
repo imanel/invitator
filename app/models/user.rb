@@ -15,4 +15,8 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
   validates_length_of :password, :within => 3..20
   
+  attr_accessible :login, :password, :password_confirmation
+  
+  has_one :profile
+  
 end

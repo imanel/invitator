@@ -10,7 +10,8 @@ class Menu
   SIGNED_IN_HIERARCHY = [
     [ "home", "Home", root_path ],
     [ "profile", "Profile", '#' ],
-    [ "invitations", "Invitations", '#' ]
+    [ "invitations", "Invitations", '#' ],
+    [ "sign_out", "Sign out", destroy_user_session_path]
   ]
 
   def self.main(selected, options = {})

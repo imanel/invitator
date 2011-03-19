@@ -1,5 +1,10 @@
 require 'spec_helper'
 
 describe Profile do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject { Factory.build :profile }
+  
+  it { should be_valid }
+  
+  it { should validate_presence_of :full_name }
+  it { should validate_presence_of :address }
 end

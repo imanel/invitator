@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
   load_and_authorize_resource
+  menu :profile
   
   before_filter :check_profile_existence, :except => [:new, :create]
   

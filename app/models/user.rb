@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   validates_presence_of :login
   validates_uniqueness_of :login
   validates_format_of :login, :with => /^[\w\d]+$/, :message => "only letter, number or underscore allowed"
+  validates_length_of :login, :maximum => 30
   
   validates_presence_of :password
   validates_confirmation_of :password

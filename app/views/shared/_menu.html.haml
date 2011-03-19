@@ -1,0 +1,5 @@
+%nav
+  %ul
+    - Menu.main(@current_tab, :scope => (user_signed_in? ? :signed_in : :signed_out)).each do |menu|
+      %li{ :class => (menu.selected ? 'selected' : nil) }
+        = link_to menu.title, menu.url

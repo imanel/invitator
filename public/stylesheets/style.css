@@ -7,5 +7,6 @@ nav ul li { float: left; }
 nav ul li a { font-size: 12px; text-decoration: none; color: #000; display: block; float: left; padding: 3px 7px; border-right: 1px solid #565149;}
 nav ul li a:hover { color: #777; }
 nav ul li a.last { border-right: 0; }
+nav ul li.selected a { font-weight: bold;}
 
 #wrapper { margin: 40px auto 0; padding: 20px; width: 960px; background: white; border: 1px solid #ccc; }

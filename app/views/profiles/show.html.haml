@@ -1,23 +1,15 @@
-%h1 My Profile
+%h1= @profile.full_name
 
-= image_tag(@profile.avatar.url(:thumb)) if @profile.avatar?
+#avatar
+  = image_tag(@profile.avatar.url(:thumb))
+
 %p
-  %b Full name:
-  = @profile.full_name
-%p
-  %b Address:
   = @profile.address
 %p
-  %b City:
+  = @profile.postal_code
   = @profile.city
 %p
-  %b Province:
   = @profile.province
-%p
-  %b Country:
   = @profile.country
 %p
-  %b Postal Code:
-  = @profile.postal_code
-%p
-  = link_to 'Edit', edit_profile_path
+  = link_to raw('Edit &raquo;'), edit_profile_path, :class => 'button'

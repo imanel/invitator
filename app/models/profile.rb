@@ -8,7 +8,7 @@ class Profile < ActiveRecord::Base
   
   has_attached_file :avatar,
                     :styles => { :thumb => '160x160#' },
-                    :default_url => "/images/:class/:attachment/missing_:style.jpg"
+                    :default_url => "/images/user_avatar.png"
   validates_attachment_content_type :avatar, :content_type => ['image/jpg', 'image/jpeg', 'image/gif']
   
 end

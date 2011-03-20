@@ -19,5 +19,6 @@ class User < ActiveRecord::Base
   attr_accessible :login, :password, :password_confirmation
   
   has_one :profile
+  has_many :invitations, :class_name => "Invitation", :foreign_key => "creator_id"
   
 end

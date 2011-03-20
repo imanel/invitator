@@ -9,3 +9,10 @@ Factory.define :profile do |f|
   f.full_name 'Some Name'
   f.address 'Some Address'
 end
+
+Factory.define :invitation do |f|
+  f.association :creator, :factory => :user
+  f.target_email 'test@example.org'
+  f.subject 'some subject'
+  f.content 'some content'
+end

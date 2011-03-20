@@ -64,6 +64,7 @@ section {
   overflow: auto;
   padding: 15px 25px;
   margin: 40px auto 20px;
+  background: white;
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FBFBFB), to(#F1F1F4));
   background-image: -webkit-linear-gradient(#FBFBFB, #F1F1F4);
   background-image: -moz-linear-gradient(#FBFBFB, #F1F1F4);

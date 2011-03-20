@@ -1,7 +1,6 @@
 %h1= @profile.full_name
 
-#avatar
-  = image_tag(@profile.avatar.url(:thumb))
+= image_tag @profile.avatar.url(:thumb), :id => 'avatar'
 
 %p
   = @profile.address

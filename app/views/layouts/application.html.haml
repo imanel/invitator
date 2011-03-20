@@ -6,7 +6,8 @@
     = javascript_include_tag :defaults, 'html5'
     = csrf_meta_tag
   %body
-    #top
+    %header
       = render :partial => 'shared/menu'
-    #wrapper
-      = yield
+    %article
+      %section
+        = yield

@@ -2,14 +2,14 @@ class RegistrationsController < Devise::RegistrationsController
   menu :sign_up
   
   def create
-    if params[:invitation_id] && params[:invitation_token]
+    if !params[:invitation_id].blank? && !params[:invitation_token].blank?
       @invitation = Invitation.check_for_new_user(params[:invitation_id], params[:invitation_token])
       if @invitation.nil?
         flash[:error] = "Unknown invitation or invalid token. Please try again later"
         redirect_to root_path and return
       end
-      super
     end
+    super
   end
   
   protected

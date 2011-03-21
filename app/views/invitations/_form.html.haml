@@ -1,0 +1,15 @@
+= form_for @invitation, :html => { :remote => !!@remote } do |form|
+  %p
+    = form.label :target_email, 'Email:'
+    = form.text_field :target_email
+    = form.error_message_on :target_email, :html_tag => :span
+  %p
+    = form.label :subject, 'Subject:'
+    = form.text_field :subject
+    = form.error_message_on :subject, :html_tag => :span
+  %p
+    = form.label :content, 'Content:'
+    = form.text_area :content
+    = form.error_message_on :content, :html_tag => :span
+  %p
+    = form.submit 'Send'

@@ -21,4 +21,8 @@ class User < ActiveRecord::Base
   has_one :profile
   has_many :invitations, :class_name => "Invitation", :foreign_key => "creator_id"
   
+  def profile_filled?
+    !self.profile.nil?
+  end
+  
 end

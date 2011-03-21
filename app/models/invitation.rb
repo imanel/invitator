@@ -1,5 +1,11 @@
 class Invitation < ActiveRecord::Base
   
+  STATUS_NAMES = {
+    'new' => 'Waiting',
+    'accepted' => 'Accepted',
+    'rejected' => 'Rejected'
+  }
+  
   belongs_to :creator, :class_name => "User", :foreign_key => "creator_id"
   
   before_validation :split_multiple_target_email
@@ -13,6 +19,10 @@ class Invitation < ActiveRecord::Base
   after_save :save_child_invitations
   
   attr_accessible :target_email, :subject, :content
+  
+  def status_name
+    STATUS_NAMES[self.status]
+  end
   
   private
   

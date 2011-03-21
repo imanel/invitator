@@ -1,8 +1,9 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
-  font-family: "Gill Sans", Calibri, "Trebuchet MS", sans-serif
+  font-family: "Gill Sans", Calibri, "Trebuchet MS", sans-serif;
+  position: relative;
+  min-width: 700px;
 }
 body {
   color: #666;
@@ -56,14 +57,22 @@ nav ul li a:hover { color: #777; }
 nav ul li a.last { border-right: 0; }
 nav ul li.selected a { font-weight: bold;}
 
-article { overflow: hidden; display: block;}
+article {
+  overflow: hidden;
+  display: block;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  margin-left: -335px;
+  padding: 10px 10px 15px;
+}
 
 section {
+  position: relative;
   display: block;
   width: 600px;
   overflow: auto;
   padding: 15px 25px;
-  margin: 40px auto 20px;
   background: white;
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FBFBFB), to(#F1F1F4));
   background-image: -webkit-linear-gradient(#FBFBFB, #F1F1F4);
@@ -76,12 +85,13 @@ section {
 
 form { width: 100%; }
 label { width: 250px; display: inline-block; text-align: right; }
-input[type=text], input[type=password], input[type=file] {
+input[type=text], input[type=password], input[type=file], textarea {
   width: 200px;
   border: 1px solid #ccc;
   background: transparent;
   padding: 3px;
 }
+textarea { vertical-align:text-top; height: 100px ;}
 input[type=submit] { margin-left: 253px;}
 .field_with_errors { display: inline-block; }
 .formError { padding-left: 255px; color: red; }
@@ -100,4 +110,61 @@ img#avatar {
   -webkit-border-radius: 0.5em;
   -webkit-transform: rotate(10deg); -moz-transform: rotate(10deg); -o-transform: rotate(10deg);
   behavior: url("/stylesheets/PIE.htc");
+}
+
+table#invitations {
+  width: 100%;
+  text-align: center;
+}
+
+table#invitations td {
+  width: 33%;
+}
+
+table#invitations .new a {
+  color: orange;
+}
+
+table#invitations .accepted a {
+  color: green;
+}
+
+table#invitations .rejected a {
+  color: red;
+}
+
+#invitation_status {
+  position: relative;
+  background: #f7f7f7;
+  float: right;
+  margin-top: -65px; margin-right: 0px;
+  font-size: 24px;
+  border: 4px solid white;
+  padding: 8px;
+  -webkit-transform: rotate(20deg); -moz-transform: rotate(20deg); -o-transform: rotate(20deg);
+  box-shadow: 2px 2px 8px #888;
+  -moz-box-shadow: 2px 2px 8px #888;
+  -webkit-box-shadow: 2px 2px 8px #888;
+  behavior: url("/stylesheets/PIE.htc");
+}
+
+#invitation_status.new {
+  color: orange;
+  border-color: orange;
+}
+
+#invitation_status.accepted {
+  color: green;
+  border-color: green;
+}
+
+#invitation_status.rejected {
+  color: red;
+  border-color: red;
+}
+
+#new_invitation_link {
+  float: right;
+  margin-top: -46px; margin-right: 0px;
+  font-size: 14px;
 }

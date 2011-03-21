@@ -1,0 +1,2 @@
+<% @remote = true %>
+$("#new_invitation_link").overlay().getOverlay().find(".contentWrap").html("<%= escape_javascript(render :file => 'invitations/new.html.haml') %>");

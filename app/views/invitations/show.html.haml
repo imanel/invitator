@@ -1,0 +1,18 @@
+%h1== Invitation #{@invitation.id}
+
+%p{ :id => "invitation_status", :class => @invitation.status }
+  = @invitation.status_name
+
+%p
+  %b Targeted email:
+  = @invitation.target_email
+%p
+  %b Sent on:
+  = @invitation.created_at.strftime('%Y-%m-%d %H:%M')
+%p
+  %b Subject:
+  = @invitation.subject
+%p
+  %b Content:
+  %br/
+  = @invitation.content

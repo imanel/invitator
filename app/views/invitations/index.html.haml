@@ -1,0 +1,17 @@
+%h1 Invitations
+
+= link_to raw('send new invitation &raquo;'), new_invitation_path, :id => 'new_invitation_link', :rel => '#overlay'
+
+%table#invitations
+  %tr
+    %th Waiting
+    %th Accepted
+    %th Rejected
+  - @invitations_size.times do |i|
+    %tr
+      %td.new
+        = link_to_invitation @new[i]
+      %td.accepted
+        = link_to_invitation @accepted[i]
+      %td.rejected
+        = link_to_invitation @rejected[i]

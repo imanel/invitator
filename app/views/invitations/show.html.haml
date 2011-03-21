@@ -16,3 +16,7 @@
   %b Content:
   %br/
   = @invitation.content
+- unless user_signed_in?
+  %p#invitation_options
+    = link_to 'Accept', accept_invitation_path(@invitation, :token => params[:token]), :id => 'accept_invitation'
+    = link_to 'Reject', reject_invitation_path(@invitation, :token => params[:token]), :id => 'reject_invitation', :confirm => 'Are you sure?'

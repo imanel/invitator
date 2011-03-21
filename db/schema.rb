@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110320132138) do
+ActiveRecord::Schema.define(:version => 20110321214119) do
 
   create_table "invitations", :force => true do |t|
     t.integer  "creator_id"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20110320132138) do
     t.string   "status",       :default => "new"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "token"
   end
 
   create_table "profiles", :force => true do |t|

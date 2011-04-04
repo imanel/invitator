@@ -20,6 +20,7 @@ class Invitation < ActiveRecord::Base
   before_save :use_first_provided_email
   after_save :save_child_invitations
   before_create :generate_token
+  after_create :deliver_invitation
   
   attr_accessible :target_email, :subject, :content
   
@@ -43,6 +44,7 @@ class Invitation < ActiveRecord::Base
   def reject!
     self.status = "rejected"
     self.save(:validate => false)
+    InvitationMailer.invitation_declined(self).deliver
   end
   
   def self.check_for_new_user(id, token)
@@ -84,6 +86,10 @@ class Invitation < ActiveRecord::Base
   
   def save_child_invitations
     @child_invitations.each { |invitation| invitation.save(:validate => false) } if @child_invitations
+  end
+  
+  def deliver_invitation
+    InvitationMailer.new_invitation(self).deliver
   end
   
 end

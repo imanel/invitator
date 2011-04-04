@@ -1,0 +1,8 @@
+<h1>Hello <%= @invitation.creator.profile.full_name %></h1>
+
+<p>We're sorry to inform you that your invitation has been rejected</p>
+<p>
+  To see rejected invitation please follow this link:
+  <% url = invitation_url(@invitation) -%>
+  <a href="<%= url %>"><%= url %></a>
+</p>

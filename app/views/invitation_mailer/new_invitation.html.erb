@@ -1,0 +1,7 @@
+<%= raw @invitation.content %>
+<br/>
+<p>
+  To accept or decline this invitation please follow this link:
+  <% url = invitation_url(@invitation, :token => @invitation.token) -%>
+  <a href="<%= url %>"><%= url %></a>
+</p>

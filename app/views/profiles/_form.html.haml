@@ -4,6 +4,10 @@
     = form.text_field :full_name
     = form.error_message_on :full_name, :html_tag => :span
   %p
+    = form.label :email, 'Email:'
+    = form.text_field :email
+    = form.error_message_on :email, :html_tag => :span
+  %p
     = form.label :address, 'Address:'
     = form.text_field :address
     = form.error_message_on :address, :html_tag => :span

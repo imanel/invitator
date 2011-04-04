@@ -28,7 +28,7 @@ class Invitation < ActiveRecord::Base
   end
   
   def generate_token
-    self.token = Digest::MD5.new(rand.to_s).to_s
+    self.token = Digest::MD5.hexdigest(rand.to_s)
   end
   
   def allowed_access?(token)

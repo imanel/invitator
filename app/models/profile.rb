@@ -1,10 +1,11 @@
 class Profile < ActiveRecord::Base
   
-  attr_accessible :full_name, :address, :city, :province, :country, :postal_code, :avatar
+  attr_accessible :full_name, :address, :city, :province, :country, :postal_code, :avatar, :email
   
   belongs_to :user
   
-  validates_presence_of :full_name, :address
+  validates_presence_of :full_name, :address, :email
+  validates_format_of :email, :with => Devise.email_regexp
   
   has_attached_file :avatar,
                     :styles => { :thumb => '160x160#' },

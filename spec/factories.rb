@@ -6,6 +6,7 @@ end
 
 Factory.define :profile do |f|
   f.association :user
+  f.sequence(:email) {|n| "user#{n}@example.org" }
   f.full_name 'Some Name'
   f.address 'Some Address'
 end

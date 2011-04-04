@@ -3,8 +3,10 @@
   %head
     %title Sage Test Project
     = stylesheet_link_tag :all
-    = javascript_include_tag :defaults, 'html5', 'jquery.tools.min'
+    = javascript_include_tag :defaults, 'html5', 'jquery.tools.min', 'jquery.jgrowl'
     = csrf_meta_tag
+    - flash.each do |type, message|
+      %meta{ :name => 'flash', :type => type, :content => message }
   %body
     #overlay
       .contentWrap

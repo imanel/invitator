@@ -37,7 +37,10 @@ class ProfilesController < ApplicationController
   
   def check_profile_existence
     @profile = current_user.profile
-    redirect_to new_profile_path and return unless @profile
+    unless @profile
+      flash.each{ |key, val| flash[key] = val }
+      redirect_to new_profile_path and return
+    end
   end
   
 end

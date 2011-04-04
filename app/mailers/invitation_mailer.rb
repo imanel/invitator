@@ -8,7 +8,7 @@ class InvitationMailer < ActionMailer::Base
   
   def invitation_declined(invitation)
     @invitation = invitation
-    mail(:to => invitation.creator.email, :subject => "Your invitation was declined!")
+    mail(:to => invitation.creator.profile.email, :subject => "Your invitation was declined!")
   end
   
 end

@@ -1,4 +1,4 @@
-require 'md5'
+require 'digest/md5'
 
 class Invitation < ActiveRecord::Base
   
@@ -28,7 +28,7 @@ class Invitation < ActiveRecord::Base
   end
   
   def generate_token
-    self.token = MD5.new(rand.to_s).to_s
+    self.token = Digest::MD5.new(rand.to_s).to_s
   end
   
   def allowed_access?(token)

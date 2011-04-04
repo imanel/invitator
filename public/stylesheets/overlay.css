@@ -27,7 +27,7 @@ div.contentWrap {
   margin: auto;
 }
 
-#overlay input[type=text], input[type=password], input[type=file], textarea {
+#overlay input[type=text], #overlay input[type=password], #overlay input[type=file], #overlay textarea {
   color: white;
 }
 

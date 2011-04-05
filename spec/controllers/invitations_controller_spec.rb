@@ -201,6 +201,7 @@ describe InvitationsController do
         its(:response) { should redirect_to new_user_session_path }
       end
       context "known token" do
+        before { Factory :profile, :user_id => user.id }
         before { get :reject, :id => invitation.id, :token => invitation.token }
         
         its(:response) { should redirect_to root_path }
